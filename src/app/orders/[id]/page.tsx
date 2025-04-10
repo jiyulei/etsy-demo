@@ -34,7 +34,7 @@ export default async function OrderDetailPage({
             <h1 className="text-2xl font-bold text-gray-900">
               Order #{order.receipt_id}
             </h1>
-            <OrderTags orderId={order.receipt_id} initialTags={order.tags} />
+            <OrderTags orderId={order.receipt_id} initialTags={[]} />
           </div>
           <Link
             href="/orders"
