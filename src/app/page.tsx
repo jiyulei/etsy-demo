@@ -1,103 +1,129 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto">
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+          {/* Header */}
+          <div className="px-6 py-8 border-b border-gray-200">
+            <div className="text-center">
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                Etsy Order Management Demo
+              </h1>
+              <p className="text-lg text-gray-600">
+                Work in Progress - API Integration Demo
+              </p>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* Content */}
+          <div className="px-6 py-6">
+            <div className="prose max-w-none">
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                <p className="text-blue-700">
+                  <strong>Note to Etsy API Review Team:</strong> This is a
+                  demonstration project showcasing the intended integration with
+                  Etsy's API endpoints. Currently using mock data for
+                  development and review purposes.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 border border-gray-200 rounded-md p-4 mb-6">
+                <p className="text-gray-600 text-sm italic">
+                  The term 'Etsy' is a trademark of Etsy, Inc. This application
+                  uses the Etsy API but is not endorsed or certified by Etsy.
+                </p>
+              </div>
+
+              <h2 className="text-xl font-semibold mb-4">About This Demo</h2>
+              <ul className="space-y-3 text-gray-600">
+                <li>
+                  • This is a personal project for managing my own Etsy shop
+                  orders
+                </li>
+                <li>
+                  • Authentication is temporarily disabled for demo purposes
+                  only - proper authentication and security measures will be
+                  implemented in the production version
+                </li>
+                <li>
+                  • Currently using hardcoded mock data that matches the
+                  structure of Etsy's{" "}
+                  <code className="bg-gray-100 px-2 py-1 rounded">
+                    /v3/application/shops/{"{shop_id}"}/receipts
+                  </code>{" "}
+                  endpoint
+                </li>
+                <li>
+                  • All data structures and field names follow Etsy's official
+                  API documentation
+                </li>
+                <li>
+                  • The interface demonstrates how we plan to display and manage
+                  order information
+                </li>
+              </ul>
+
+              <h2 className="text-xl font-semibold mt-6 mb-4">
+                Security & Privacy
+              </h2>
+              <ul className="space-y-3 text-gray-600">
+                <li>
+                  • This demo version uses mock data only - no real Etsy shop or
+                  customer data is being accessed
+                </li>
+                <li>
+                  • The production version will implement full authentication
+                  and security measures
+                </li>
+                <li>
+                  • All data handling will comply with Etsy's privacy and
+                  security requirements
+                </li>
+              </ul>
+
+              <h2 className="text-xl font-semibold mt-6 mb-4">
+                Implementation Details
+              </h2>
+              <ul className="space-y-3 text-gray-600">
+                <li>• Built with Next.js, TypeScript, and Tailwind CSS</li>
+                <li>• Mock data structure matches Etsy API response format</li>
+                <li>
+                  • Includes key fields such as receipt_id, buyer information,
+                  order status, and shipping details
+                </li>
+                <li>
+                  • Features visual indicators for orders with buyer messages
+                </li>
+              </ul>
+
+              <div className="mt-8 space-y-4">
+                <Link
+                  href="/orders"
+                  className="block w-full text-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+                >
+                  View All Orders
+                </Link>
+                <Link
+                  href="/custom-orders"
+                  className="block w-full text-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+                >
+                  View Orders with message_from_buyer
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer */}
+          <div className="px-6 py-4 bg-gray-50">
+            <p className="text-sm text-gray-500 text-center">
+              This is a development demo using mock data. No real Etsy shop data
+              is being accessed.
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
