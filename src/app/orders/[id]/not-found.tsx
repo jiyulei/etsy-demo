@@ -10,7 +10,8 @@ export default function OrderNotFound() {
               Order Not Found
             </h2>
             <p className="text-gray-600 mb-6">
-              The order you're looking for doesn't exist or has been removed.
+              The order you&apos;re looking for doesn&apos;t exist or has been
+              removed.
             </p>
             <Link
               href="/orders"
