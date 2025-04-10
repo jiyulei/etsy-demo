@@ -2,6 +2,7 @@ import { OrdersResponse } from "@/types/order";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import InternalNotes from "./InternalNotes";
+import OrderTags from "./OrderTags";
 
 async function getOrders(): Promise<OrdersResponse> {
   const res = await fetch("http://localhost:3000/api/mock/orders");
@@ -29,14 +30,17 @@ export default async function OrderDetailPage({
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="mb-6 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-gray-900">
-            Order #{order.receipt_id}
-          </h1>
+          <div className="flex items-center gap-4">
+            <h1 className="text-2xl font-bold text-gray-900">
+              Order #{order.receipt_id}
+            </h1>
+            <OrderTags orderId={order.receipt_id} initialTags={order.tags} />
+          </div>
           <Link
-            href="/"
+            href="/orders"
             className="text-indigo-600 hover:text-indigo-900 font-medium"
           >
-            ← Back to Home
+            ← Back to Orders
           </Link>
         </div>
 

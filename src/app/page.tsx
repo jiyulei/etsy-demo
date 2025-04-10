@@ -36,7 +36,9 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <h2 className="text-xl font-semibold mb-4">About This Demo</h2>
+              <h2 className="text-xl font-semibold mb-4 text-cyan-400">
+                About This Demo
+              </h2>
               <ul className="space-y-3 text-gray-600">
                 <li>
                   • This is a personal project for managing my own Etsy shop
@@ -60,12 +62,12 @@ export default function HomePage() {
                   API documentation
                 </li>
                 <li>
-                  • The interface demonstrates how we plan to display and manage
+                  • The interface demonstrates how I plan to display and manage
                   order information
                 </li>
               </ul>
 
-              <h2 className="text-xl font-semibold mt-6 mb-4">
+              <h2 className="text-xl font-semibold mt-6 mb-4 text-cyan-400">
                 Security & Privacy
               </h2>
               <ul className="space-y-3 text-gray-600">
@@ -83,7 +85,7 @@ export default function HomePage() {
                 </li>
               </ul>
 
-              <h2 className="text-xl font-semibold mt-6 mb-4">
+              <h2 className="text-xl font-semibold mt-6 mb-4 text-cyan-400">
                 Implementation Details
               </h2>
               <ul className="space-y-3 text-gray-600">
