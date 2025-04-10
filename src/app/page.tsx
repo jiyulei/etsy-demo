@@ -24,15 +24,16 @@ export default function HomePage() {
                 <p className="text-blue-700">
                   <strong>Note to Etsy API Review Team:</strong> This is a
                   demonstration project showcasing the intended integration with
-                  Etsy's API endpoints. Currently using mock data for
+                  Etsy&apos;s API endpoints. Currently using mock data for
                   development and review purposes.
                 </p>
               </div>
 
               <div className="bg-gray-50 border border-gray-200 rounded-md p-4 mb-6">
                 <p className="text-gray-600 text-sm italic">
-                  The term 'Etsy' is a trademark of Etsy, Inc. This application
-                  uses the Etsy API but is not endorsed or certified by Etsy.
+                  The term &apos;Etsy&apos; is a trademark of Etsy, Inc. This
+                  application uses the Etsy API but is not endorsed or certified
+                  by Etsy.
                 </p>
               </div>
 
@@ -51,15 +52,15 @@ export default function HomePage() {
                 </li>
                 <li>
                   • Currently using hardcoded mock data that matches the
-                  structure of Etsy's{" "}
+                  structure of Etsy&apos;s
                   <code className="bg-gray-100 px-2 py-1 rounded">
                     /v3/application/shops/{"{shop_id}"}/receipts
                   </code>{" "}
                   endpoint
                 </li>
                 <li>
-                  • All data structures and field names follow Etsy's official
-                  API documentation
+                  • All data structures and field names follow Etsy&apos;s
+                  official API documentation
                 </li>
                 <li>
                   • The interface demonstrates how I plan to display and manage
@@ -80,7 +81,7 @@ export default function HomePage() {
                   and security measures
                 </li>
                 <li>
-                  • All data handling will comply with Etsy's privacy and
+                  • All data handling will comply with Etsy&apos;s privacy and
                   security requirements
                 </li>
               </ul>
