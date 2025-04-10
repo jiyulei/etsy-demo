@@ -14,6 +14,7 @@ export interface Order {
   created_timestamp: number;
   message_from_buyer: string;
   transactions: Transaction[];
+  tags: string[];
 }
 
 export interface OrdersResponse {

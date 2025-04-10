@@ -1,12 +1,9 @@
 import { OrdersResponse } from "@/types/order";
 import Link from "next/link";
+import mockOrders from "@/data/mockOrders";
 
 async function getOrders(): Promise<OrdersResponse> {
-  const res = await fetch("http://localhost:3000/api/mock/orders");
-  if (!res.ok) {
-    throw new Error("Failed to fetch orders");
-  }
-  return res.json();
+  return mockOrders;
 }
 
 export default async function OrdersPage() {

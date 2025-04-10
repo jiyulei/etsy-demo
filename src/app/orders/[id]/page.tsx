@@ -1,30 +1,21 @@
-import { OrdersResponse } from "@/types/order";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import InternalNotes from "./InternalNotes";
 import OrderTags from "./OrderTags";
+import mockOrders from "@/data/mockOrders";
 
-async function getOrders(): Promise<OrdersResponse> {
-  const res = await fetch("http://localhost:3000/api/mock/orders");
-  if (!res.ok) {
-    throw new Error("Failed to fetch orders");
-  }
-  return res.json();
+async function getOrders() {
+  return mockOrders;
 }
 
-export default async function OrderDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default async function OrderDetailPage({ params }: any) {
   const { results: orders } = await getOrders();
+
   const order = orders.find(
-    (order) => order.receipt_id === parseInt(params.id, 10)
+    (order: any) => order.receipt_id === parseInt(params.id)
   );
 
-  if (!order) {
-    notFound();
-  }
+  if (!order) return <div className="p-6 text-gray-600">Order not found</div>;
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
@@ -45,7 +36,7 @@ export default async function OrderDetailPage({
         </div>
 
         <div className="bg-white shadow overflow-hidden sm:rounded-lg">
-          {/* Order Information */}
+          {/* Order Info */}
           <div className="px-4 py-5 sm:px-6">
             <h3 className="text-lg leading-6 font-medium text-gray-900">
               Order Information
@@ -64,9 +55,7 @@ export default async function OrderDetailPage({
                   Created At
                 </dt>
                 <dd className="mt-1 text-sm text-gray-900">
-                  {new Date(order.created_timestamp * 1000).toLocaleString(
-                    "en-US"
-                  )}
+                  {new Date(order.created_timestamp * 1000).toLocaleString()}
                 </dd>
               </div>
               <div>
@@ -102,7 +91,7 @@ export default async function OrderDetailPage({
             </dl>
           </div>
 
-          {/* Buyer Information */}
+          {/* Buyer Info */}
           <div className="px-4 py-5 sm:px-6 bg-gray-50">
             <h3 className="text-lg leading-6 font-medium text-gray-900">
               Buyer Information
@@ -159,12 +148,12 @@ export default async function OrderDetailPage({
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {order.transactions.map((transaction) => (
+                  {order.transactions.map((transaction: any) => (
                     <tr key={transaction.transaction_id}>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      <td className="px-6 py-4 text-sm text-gray-900">
                         {transaction.title}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 text-sm text-gray-500">
                         {transaction.sku}
                       </td>
                     </tr>
